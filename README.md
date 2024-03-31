@@ -68,3 +68,30 @@ The dataset has been provided by  Croma. It consists of 6 files. The details of 
   
 6. Festivals Data
    + No changes
+
+# Case Study 1
+## **Which Merchant Classes are Highly/Least Affected by Seasonal Variations:**
+1. Data Processing
+   + Converted Date (str) to Datetime data type
+   + Turned negative Order and Sale Values to Positive
+   + **Note:** From 24 Mar to 30 Apr 2019, the number of records is only 58. This is very less as compared to other records in the table. Usually each day has multiple records of sales, but for this period the records are missing or the number of records are very low for any given day. Looks like an issue with the Data.
+
+2. Pivot Table (Pandas)
+   + Created a Pivot Table; Rows contain Dates, Columns contain all Merch Classes. Each Cell contains the percentage of annual sale value for the specific merchant class.
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/39eba899-1a73-4e60-9291-8fbfed9b4467)
+
+   + Transposed the Pivot Table
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/6e736c68-8207-41e6-b674-87dc367e5865)
+
+   + For each Festive Season I have collated the top 10 and bottom 10 sales value by percentage of annual sales for all the years -2019,2020,2021
+   + The data is saved in excel files
+   + A Chart has been created to observe the sales trend of Merchant Classes over time
+   ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/fafd8c96-9634-408e-b32e-439d2157032d)
+   + Another Example: For Audio Systems
+   ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/3d8fba9b-08d7-4c1e-9e47-f37bf8a28c54)
+
+
+
+
+
+
