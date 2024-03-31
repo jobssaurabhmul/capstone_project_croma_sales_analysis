@@ -120,6 +120,20 @@ Data Cleaning was a huge part for creating the above new groups. Each Group had 
 
 ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/760badf3-3fc4-4517-bced-a96fe52ffeeb)
 
+## **SQL Queries:**
++ Return the Cust ID that received the 5th highest number of campaigns for the entire duration (using only the campaign data)
+
+  - _SELECT CustID FROM (_
+  - _SELECT CustID, COUNT(CustID) as No_of_Campaigns,_
+  - _DENSE_RANK() OVER (ORDER BY COUNT(CustID) DESC) as Rank_Campaign_
+  - _FROM campaign_data_
+  - _GROUP BY CustID_
+  - _ORDER BY No_of_Campaigns DESC) as tbl_rank_
+  - _WHERE Rank_Campaign = 5;_
+
++ Find the States for which the average time of delivery from Sale Timestamp to Delivered Timestamp is the minimum and the maximum respectively. Use the Delivery data for this and only those records for which Sale Timestamp, Delivery Timestamp and Ship to State – all variables are populated. 
++ Create a dataset of customer ids whose monthly transaction amount has increased every month for at least 3 consecutive months. 
+# Return the Cust ID that received the 5th highest number of campaigns for the entire duration (using only the campaign data)
 
 
 
