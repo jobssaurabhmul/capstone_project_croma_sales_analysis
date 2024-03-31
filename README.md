@@ -90,8 +90,30 @@ The dataset has been provided by  Croma. It consists of 6 files. The details of 
    + Another Example: For Audio Systems
    ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/3d8fba9b-08d7-4c1e-9e47-f37bf8a28c54)
 
+## **Product Segmentation:**
+**Merchant Categories to be analysed for this exercise are: TVs, Laptops and Mobile Phones. Classify them as Premium (top 33%), Mainstream (middle 33%) and Value (bottom 33%) depending on the Price of the Product**
 
+**Procedure Followed:**
+1. First create groups for categories: TVs, Laptops and Mobile Phones
+2. Divide the group into 3 segemnts as per salevalue/orderedqty ratio -> value, mainstream, premium
+3. For all 3 segments - calculate sales volume and revenue for each category
 
+1. Create Groups: I have considered the column MerchClassDescription to create the new groupings of TVs, Laptops and Mobile Phones. Listed below under each category are the MerchClassDescription values considered to be part of the category.
+   + TVs
+     - TV LCD
+   + Laptops
+     - Gaming Laptops
+     - Mobile Computing
+   + Mobile Phones
+     - Smart Phones (OS Based)
+     - Brand Free Mobiles
+     - Refurbished Phones
+     - Phones Mobile
+
+Data Cleaning was a huge part for creating the above new groups. Each Group had to contain only the terms mentioned above. Some terms that were removed from the above data wer terms containig:
+- Carrycase, Bag
+- Accidental Damage Protection, SDP, Extended Warranty, ZIP
+- AppleCare, AC+, Apple Pro
 
 
 
