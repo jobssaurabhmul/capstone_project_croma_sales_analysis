@@ -98,7 +98,7 @@ The dataset has been provided by  Croma. It consists of 6 files. The details of 
 2. Divide the group into 3 segemnts as per salevalue/orderedqty ratio -> value, mainstream, premium
 3. For all 3 segments - calculate sales volume and revenue for each category
 
-1. Create Groups: I have considered the column MerchClassDescription to create the new groupings of TVs, Laptops and Mobile Phones. Listed below under each category are the MerchClassDescription values considered to be part of the category.
++ Create Groups: I have considered the column MerchClassDescription to create the new groupings of TVs, Laptops and Mobile Phones. Listed below under each category are the MerchClassDescription values considered to be part of the category.
    + TVs
      - TV LCD
    + Laptops
@@ -110,13 +110,13 @@ The dataset has been provided by  Croma. It consists of 6 files. The details of 
      - Refurbished Phones
      - Phones Mobile
 
-Data Cleaning was a huge part for creating the above new groups. Each Group had to contain only the terms mentioned above. Some terms that were removed from the above data wer terms containig:
-- Carrycase, Bag
-- Accidental Damage Protection, SDP, Extended Warranty, ZIP
-- AppleCare, AC+, Apple Pro
+   + Data Cleaning was a huge part for creating the above new groups. Each Group had to contain only the terms mentioned above. Some terms that were removed from the above data wer terms containig:
+     - Carrycase, Bag
+     - Accidental Damage Protection, SDP, Extended Warranty, ZIP
+     - AppleCare, AC+, Apple Pro
 
-2. The groups were divided into the 3 segemnts as per salevalue/orderedqty ratio . Value, Mainstream, and Premium segments were created for each group.
-3. Sales Volume and Revenue for each category is displayed in an Excel Dashboard
++ The groups were divided into the 3 segemnts as per salevalue/orderedqty ratio . Value, Mainstream, and Premium segments were created for each group.
++ Sales Volume and Revenue for each category is displayed in an Excel Dashboard
 
 ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/760badf3-3fc4-4517-bced-a96fe52ffeeb)
 
@@ -130,9 +130,25 @@ Data Cleaning was a huge part for creating the above new groups. Each Group had 
   - _GROUP BY CustID_
   - _ORDER BY No_of_Campaigns DESC) as tbl_rank_
   - _WHERE Rank_Campaign = 5;_
+  - A list of Customer IDs has been generated. The data has been saved in a CSV File.
 
-+ Find the States for which the average time of delivery from Sale Timestamp to Delivered Timestamp is the minimum and the maximum respectively. Use the Delivery data for this and only those records for which Sale Timestamp, Delivery Timestamp and Ship to State – all variables are populated. 
-+ Create a dataset of customer ids whose monthly transaction amount has increased every month for at least 3 consecutive months. 
++ Find the States for which the average time of delivery from Sale Timestamp to Delivered Timestamp is the minimum and the maximum respectively. Use the Delivery data for this and only those records for which Sale Timestamp, Delivery Timestamp and Ship to State – all variables are populated.
+
+**Maximum Andaman And Nicobar Islands	12489 minutes = 208.15 hrs**
+  - _WITH data_table as (SELECT shiptostate as State, TIMESTAMPDIFF(MINUTE, STR_TO_DATE(sale_timestamp,"%d-%m-%Y %H:%i"), STR_TO_DATE(delivered_timestamp,"%d-%m-%Y %H:%i")) as TimeDelta_
+  - _FROM delivery_analysis_
+  - _GROUP BY State)_
+  - _SELECT State, ROUND(TimeDelta/60,2) as Hours FROM data_table_
+  - _WHERE TimeDelta = (SELECT MAX(TimeDelta) FROM data_table);_
+
+**Minimum - Jammu And Kashmir	212 minutes = 3.53 hrs**
+  - _WITH data_table as (SELECT shiptostate as State, TIMESTAMPDIFF(MINUTE, STR_TO_DATE(sale_timestamp,"%d-%m-%Y %H:%i"), STR_TO_DATE(delivered_timestamp,"%d-%m-%Y %H:%i")) as TimeDelta_
+  - _FROM delivery_analysis_
+  - _GROUP BY State)_
+  - _SELECT State, ROUND(TimeDelta/60,2) as Hours FROM data_table_
+  - _WHERE TimeDelta = (SELECT MIN(TimeDelta) FROM data_table);_
+
++ Create a dataset of customer ids whose monthly transaction amount has increased every month for at least 3 consecutive months.
 # Return the Cust ID that received the 5th highest number of campaigns for the entire duration (using only the campaign data)
 
 
