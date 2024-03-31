@@ -43,4 +43,28 @@ The dataset has been provided by  Croma. It consists of 6 files. The details of 
 + Tableau
 + Excel
 
+# Data Cleaning
+1. Transactional Data
+   + 2 Duplicate Columns were dropped
+   + Null Values were replaced apprpriately
+   + Filled Missing State Values where Cities were known
+   + Replace incorrect spellings of States
 
+2. Customer Master Data
+   + Replace null values and incorrect spellings of States
+
+3. Campaign Details
+   + No changes
+
+4. Customer Reviews
+   + Dropped records with null reviews
+   + Dropped one column
+
+5. Delivery Data
+   + Replaced Null text data with "Unknown"
+   + Dropped one duplicate column
+   + Cleaned Pincode
+   + Filled Null state values where city was known
+  
+6. Festivals Data
+   + No changes
