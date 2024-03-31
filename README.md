@@ -161,7 +161,11 @@ The Top 5 B&M stores by Sales were found using Pandas. An Interactive Dashboard 
 ## Product Evolution
 Created a dashboard in Tableau. Selected a an SKU belonging to a Mechant Category and then displayed how the average price and corresponding demand for that SKU has changed across time.
 
-![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/fe77a156-8727-4a56-bfde-275e15334e44)
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/b593e6bb-ac6f-4545-9646-a016844e34db)
+
+## Mini Sales Dashboard Power BI
+
+
 
 
 
