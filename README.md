@@ -149,7 +149,20 @@ The dataset has been provided by  Croma. It consists of 6 files. The details of 
   - _WHERE TimeDelta = (SELECT MIN(TimeDelta) FROM data_table);_
 
 + Create a dataset of customer ids whose monthly transaction amount has increased every month for at least 3 consecutive months.
-# Return the Cust ID that received the 5th highest number of campaigns for the entire duration (using only the campaign data)
+## Return the Cust ID that received the 5th highest number of campaigns for the entire duration (using only the campaign data)
+
+## Product Assortment:
+For the top 5 Brick and Mortar Stores across India, what is the distribution of sales for the most recent 6 months of data across the different Merchant Categories and their corresponding segments (Premium, Mainstream, Value).
+
+The Top 5 B&M stores by Sales were found using Pandas. An Interactive Dashboard is created which shows the sales across the last 6 months data.
+
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/f2f8e798-90ca-4668-b5cd-0c9f0792a74d)
+
+## Product Evolution
+Created a dashboard in Tableau. Selected a an SKU belonging to a Mechant Category and then displayed how the average price and corresponding demand for that SKU has changed across time.
+
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/fe77a156-8727-4a56-bfde-275e15334e44)
+
 
 
 
