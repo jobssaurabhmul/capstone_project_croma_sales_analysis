@@ -115,5 +115,11 @@ Data Cleaning was a huge part for creating the above new groups. Each Group had 
 - Accidental Damage Protection, SDP, Extended Warranty, ZIP
 - AppleCare, AC+, Apple Pro
 
+2. The groups were divided into the 3 segemnts as per salevalue/orderedqty ratio . Value, Mainstream, and Premium segments were created for each group.
+3. Sales Volume and Revenue for each category is displayed in an Excel Dashboard
+
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/760badf3-3fc4-4517-bced-a96fe52ffeeb)
+
+
 
 
