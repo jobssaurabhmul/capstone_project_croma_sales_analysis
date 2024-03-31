@@ -13,19 +13,19 @@ By the time of writing this report I have completed Case Studies 1 and 4, and gi
 # Data Description
 The dataset has been provided by  Croma. It consists of 6 files. The details of each are given below:
 
-***Transactional Data***: Contains details of transaction across any store, across India. Details captured include: customer id, sale value, ordered quantity, store id, city, state, order date.
+1. ***Transactional Data***: Contains details of transaction across any store, across India. Details captured include: customer id, sale value, ordered quantity, store id, city, state, order date.
 
-***Customer Master File***: Contains details of the customers such as gender, marital status, pincode.
+2. ***Customer Master File***: Contains details of the customers such as gender, marital status, pincode.
 
-***Campaign Details***: Details of campaigns being run. Data includes date of campaign, customer id, campaign medium: email or sms, response of customer: whether viewed, delivered or clicked.
+3. ***Campaign Details***: Details of campaigns being run. Data includes date of campaign, customer id, campaign medium: email or sms, response of customer: whether viewed, delivered or clicked.
 
-***Customer Reviews***: Contains category, group, product, city and review by customer
+4. ***Customer Reviews***: Contains category, group, product, city and review by customer
 
-***Delivery Data***: Details of shipments and timestamps of each process involved in delivery
+5. ***Delivery Data***: Details of shipments and timestamps of each process involved in delivery
 
-***Festivals Data***: List of festivals for which seasonality effect needs to be found
+6. ***Festivals Data***: List of festivals for which seasonality effect needs to be found
 
-***Tools/Python libraries used to process data***
+# Tools/Python Libraries used to process data
 
 + pandas
 + numpy
