@@ -188,14 +188,24 @@ As per the requirement, the following problems were solved:
 
 # Case Study 4
 ## Delivery Fulfilment Analysis
-Created a dashboard that captures the average time duration between each stop in the delivery process. Finally, I have shown the average delay in Days between the Required Delivery Date and Actual Delivery Date.
+Created a dashboard that captures the average time duration between each stop _in Hours_ in the delivery process. Finally, I have shown the average delay _in Days_ between the Required Delivery Date and Actual Delivery Date.
+
 The DAX Query majorly used was:
+
+_AVERAGEX(delivery_analysis_cleaned,DATEDIFF(delivery_analysis_cleaned[connecttocarrier_timestamp],delivery_analysis_cleaned[handedovertocarrier_timestamp],MINUTE))/60_
 
 ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/e916ed28-c282-44d9-9651-4a1c47a842b1)
 
 Data Modelling Tab:
 
+A Date table and a separate time table were created in the file and were related to the original dataset table. Slicers were used using various fields to make the dashboard interactive.
+
 ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/fa5524a0-7550-4e6c-a441-a8ffc33c2ebf)
+
+The time table: Reference: https://sqlswimmer.com/2023/08/11/how-to-create-a-time-table-in-power-bi-using-dax/
+
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/30132f97-ca89-4908-8cd3-ba309674b289)
+
 
 
 
