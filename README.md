@@ -164,6 +164,33 @@ Created a dashboard in Tableau. Selected a an SKU belonging to a Mechant Categor
 ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/b593e6bb-ac6f-4545-9646-a016844e34db)
 
 ## Mini Sales Dashboard Power BI
+As per the requirement, the following problems were solved:
+1. Number of Customers (New and Existing) every month for the last 6 months was found using the below DAX Query:
+
+   + new_customers = 
+     + VAR current_customers = VALUES(Transaction_Data[CustID])
+     + VAR current_date = MIN('Date'[Date])
+     + VAR past_customers = CALCULATETABLE(VALUES(Transaction_Data[CustID]),
+                            ALL('Date'[Date].[Month],'Date'[Date].[MonthNo],'Date'[Date].[Year])
+                            ,'Date'[Date]<current_date)
+
+     + VAR new_customers =  EXCEPT(current_customers,past_customers)
+     + RETURN COUNTROWS(DISTINCT(new_customers))
+
+2. Monthly Sales Revenue every month for the last 6 months – comparison with previous year same months
+
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/1e89ef1d-6df8-4edc-a0fb-d862032e2632)
+
+3. Average Transaction Value every month for the last 6 months
+4. State-wise heat map of India for sales in INR (Ecom + B&M combined)
+
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/761ed134-bc57-44c2-a64c-d63348747187)
+
+# Case Study 4
+## Delivery Fulfilment Analysis
+Created a dashboard that captures the average time duration between each stop in the delivery process. Finally, I have shown the average delay in Days between the Required Delivery Date and Actual Delivery Date.
+
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/e916ed28-c282-44d9-9651-4a1c47a842b1)
 
 
 
