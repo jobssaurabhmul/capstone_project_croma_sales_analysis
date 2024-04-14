@@ -149,7 +149,7 @@ The dataset has been provided by  Croma. It consists of 6 files. The details of 
   - _WHERE TimeDelta = (SELECT MIN(TimeDelta) FROM data_table);_
 
 + Create a dataset of customer ids whose monthly transaction amount has increased every month for at least 3 consecutive months.
-## Return the Cust ID that received the 5th highest number of campaigns for the entire duration (using only the campaign data)
+# Return the Cust ID that received the 5th highest number of campaigns for the entire duration (using only the campaign data)
 
 ## Product Assortment:
 For the top 5 Brick and Mortar Stores across India, what is the distribution of sales for the most recent 6 months of data across the different Merchant Categories and their corresponding segments (Premium, Mainstream, Value).
@@ -185,6 +185,39 @@ As per the requirement, the following problems were solved:
 4. State-wise heat map of India for sales in INR (Ecom + B&M combined)
 
 ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/761ed134-bc57-44c2-a64c-d63348747187)
+
+# Case Study 2
+## Campaign Effectiveness
+If a Customer has purchased anything within 30 days of a campaign, the campaign will be considered effective.
+To understand the effectiveness of Campaigns the following procedure was adopted:
+1. Select only those customers for whom the Campaigns have been run.
+2. For each customer determine the Sale Value done by the customer during the time period from the Campaign Execution Date plus 30 days.
+3. If the Sale Value is greater than 0 then the campaign is deemed effective, otherwise it is deemed not effective.
+An outcome variable is created which stores the above information.
+**Note:** Since the data was quite large, about 5% of the Campaign data was considered for the above exercise.
+
+## Data Preparation
+1. Two Features were used for the ML model:
+   + Campaign Channel: Email or SMS
+   + Status: Delivered, Viewed or Clicked
+These variables were encoded to numbers for the model training.
+
+2. It was observed that the dataset was quite imbalanced, having a lot more 0 values than 1s for the outcome variable.
+**SMOTE** technique was used to create more authentic data for the minority class. The foloowing tutorial was referred to:
+https://www.analyticsvidhya.com/blog/2021/06/5-techniques-to-handle-imbalanced-data-for-a-classification-problem/
+
+## Machine Learning
+A Campaign Effectiveness Model is to be created for the above dataset.
+
+1. Once the dataset was balanced two models were created for the prediction problem: XGBoost and RandomForests:
+2. The data was split into train and test samples. First only the base models were used on the data. Later the models were finetuned using GridSearchCV.
+3. The output for both the models on the test dataset were found to be similar. The results are shown below:
+
+![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/80f0c139-f58d-4a63-ab4e-44ca16229c1a)
+
+We can see that the scores are around 60%. The models are not the greatest. Some improvement points are:
+1. For the data prepared, the skew was removed only for the outcome variable. A better dataset would be one where the skew is removed for all the columns.
+2. Using more features for the modelling. There could be more factors than the above two that could influence the decision making process.
 
 # Case Study 4
 ## Delivery Fulfilment Analysis
