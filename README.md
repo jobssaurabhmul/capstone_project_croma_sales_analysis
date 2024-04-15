@@ -46,7 +46,7 @@ The dataset has been provided by  Croma. It consists of 6 files. The details of 
 # Data Cleaning
 1. Transactional Data
    + 2 Duplicate Columns were dropped
-   + Null Values were replaced apprpriately
+   + Null Values were replaced appropriately
    + Filled Missing State Values where Cities were known
    + Replace incorrect spellings of States
 
@@ -89,6 +89,10 @@ The dataset has been provided by  Croma. It consists of 6 files. The details of 
    ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/fafd8c96-9634-408e-b32e-439d2157032d)
    + Another Example: For Audio Systems
    ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/3d8fba9b-08d7-4c1e-9e47-f37bf8a28c54)
+
+   + Top Merchant Classes by Percentage of Sales on Diwali for all 3 years:
+   ![image](https://github.com/jobssaurabhmul/capstone_project_croma_sales_analysis/assets/152073191/42d536ee-07fe-4aca-8f9b-52009cb7ab7c)
+
 
 ## **Product Segmentation:**
 **Merchant Categories to be analysed for this exercise are: TVs, Laptops and Mobile Phones. Classify them as Premium (top 33%), Mainstream (middle 33%) and Value (bottom 33%) depending on the Price of the Product**
@@ -147,9 +151,6 @@ The dataset has been provided by  Croma. It consists of 6 files. The details of 
   - _GROUP BY State)_
   - _SELECT State, ROUND(TimeDelta/60,2) as Hours FROM data_table_
   - _WHERE TimeDelta = (SELECT MIN(TimeDelta) FROM data_table);_
-
-+ Create a dataset of customer ids whose monthly transaction amount has increased every month for at least 3 consecutive months.
-# Return the Cust ID that received the 5th highest number of campaigns for the entire duration (using only the campaign data)
 
 ## Product Assortment:
 For the top 5 Brick and Mortar Stores across India, what is the distribution of sales for the most recent 6 months of data across the different Merchant Categories and their corresponding segments (Premium, Mainstream, Value).
